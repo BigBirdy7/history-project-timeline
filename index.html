@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Timeline</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 1350px;
+            margin: 0 auto;
+            padding: 40px 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 48.6%;
+            width: 4px;
+            background: lightgrey;
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            position: relative;
+            width: 45%;
+            margin-bottom: 40px;
+            padding: 15px;
+            background: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .timeline-item:hover {
+            transform: scale(1.05);
+        }
+
+        .timeline-item:nth-child(odd) {
+            left: 0;
+            text-align: right;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 50%;
+            text-align: left;
+        }
+
+        .timeline-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .timeline-content {
+            display: none;
+            margin-top: 10px;
+            font-size: 16px;
+            color: #555;
+        }
+
+        .timeline-item.active .timeline-content {
+            display: block;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            top: 50%;
+            width: 16px;
+            height: 16px;
+            background: lightgrey;
+            border-radius: 50%;
+            transform: translateY(-50%);
+        }
+
+        .timeline-item:nth-child(odd) .timeline-dot {
+            right: -8px;
+        }
+
+        .timeline-item:nth-child(even) .timeline-dot {
+            left: -8px;
+        }
+
+        .timeline-date{
+            position: absolute;
+            top: 50%;
+            font-size: x-large;
+            font-style: italic;
+            font-family:'Times New Roman', Times, serif;
+            border-radius: 4px;
+            background-color: white;
+
+           
+            transform: translateY(-50%);
+        }
+
+        .timeline-item:nth-child(odd) .timeline-date{
+            right: -75px;
+        }
+        .timeline-item:nth-child(even) .timeline-date{
+            left: -75px;
+        }
+        .title{
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          background-color:grey;
+          opacity: 0.85;
+        }
+
+        .conclusion{
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          background-color: lightgrey;
+          opacity: 0.85;
+        }
+        .smallpp{
+          width: 700px;
+        }
+        .timeline-image{
+            width:500px;
+            height: auto;
+        }
+        figcaption {
+  background-color: black;
+  color: white;
+  font-style: italic;
+  padding: 2px;
+  text-align: center;}
+  p{
+    font-size: large;
+    line-height: 1.5;
+  }
+  #sboy{
+    background-color: #FFD700
+  }
+  #darker{
+    background-color: darkgray
+  }
+
+  body {
+    background-image: url(coolspace.jpg);
+    background-size: 100% 100%;}
+     
+    </style>
+</head>
+<body>
+    <div class="title">
+      <h1>Canadian Innovation in Aerospace: Canadarm2</h1>
+    </div>
+    <div class="conclusion">
+      <h2>Introduction</h2>
+      <p class="smallpp">Canadarm2, launched in 2001, is a shining example of Canadian Innovation and a milestone in the fields of robotics and space exploration. Building upon the foundation laid by its predecessor, the original Canadarm, Canadarm2 introduced mobility and versatility, becoming an indispensable tool for the construction and maintenance of the International Space Station. But this achievement is not an isolated event but the culmination of a legacy of Canadian aerospace advancements about which you will learn about in this timeline.
+      </p>
+    </div>
+    <div class="timeline">
+        <div class="timeline-item" onclick="toggleContent(this)">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">1905</div>
+            <div class="timeline-title">The Dominion Observatory</div>
+            <div class="timeline-content">
+                <p>The Dominion observatory was created in 1905 and shows Canada's innovation and interest in space technologies. Its contributions to astronomy and timekeeping played a critical role in advancing Canadian science and technology. The observatory was instrumental in precise location tracking and time measurement. There are several connections between the Dominion Observatory and Canadarm2. First of all, the Dominion Observatory laid the groundwork for the country’s involvement in space exploration technologies. The telescope is very accurate, contributing to a legacy of precise technology like Canadarm2. It could be argued that this is Canada’s first contribution to aerospace technologies.
+                </p>
+                <figure>
+                    <img src="dominionobserbatory.jpg" alt="Event 1 Image" class="timeline-image">
+                    <figcaption>The dominion observatory, after being constructed in 1905.</figcaption>
+                </figure>
+            </div>
+        </div>
+        <div class="timeline-item" onclick="toggleContent(this)">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">1942</div>
+            <div class="timeline-title">Development of the G-suit by Wilbur Franks</div>
+            <div class="timeline-content">
+                <p>The G-suit was a groundbreaking Canadian invention that improved pilot safety during WWII. It helped pilots with withstanding the extreme G-forces experienced in flying, a major problem when flying. 30% of deaths in the battle of Britain were because the pilots lost consciousness when experiencing high g-forces. 
+                    This innovation is connected to Canadarm2 as it shows Canada’s ties to leading innovation in aerospace technology, and Canadian ingenuity. It is also connected because it shows the Canadian will of exploring the dangerous and unknown, as both of these inventions were made to withstand harsh and inhuman environments.
+                    </p>
+                <figure>
+                    <img src="gsuit.jpg" alt="Event 1 Image" class="timeline-image">
+                    <figcaption>Wilbur Rounding Franks, posing with the Franks Flying Suit.
+                    </figcaption>
+                </figure>
+            </div>
+        </div>
+        <div class="timeline-item" onclick="toggleContent(this)">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">1981</div>
+            <div class="timeline-title">Canadarm</div>
+            <div class="timeline-content">
+                <p>Canadarm was the first robotic manipulator system designed specifically for use in space, and is Canada's most recognisable contribution to space exploration, basically a 15 meter long arm, and was developed in the late 1970s and launched into service in 1981. The original Canadarm was stationary, and was used on shuttles to deploy satellites and to assemble structures on the ISS. For example, it was used to deploy the famous Hubble telescope, but also build and repair the ISS. 5 Canadarms were launched and used until 2011. This was a great innovation in aerospace, and was a technology that was greatly used by NASA, cementing Canada's proficiency in aerospace innovation. There is also a clear connection between Canadarm and Canadarm2 because Candarm is the prerequisite for Canadarm2, and Canadarm2 is a direct upgrade.
+                </p>
+                <figure>
+                    <img src="candarm1OG.jpg" alt="Event 1 Image" class="timeline-image">
+                    <figcaption>Canadarm on a space shuttle.</figcaption>
+                </figure>
+            </div>
+        </div>
+        <div class="timeline-item" onclick="toggleContent(this)">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">1995</div>
+            <div class="timeline-title">Radarsat-2
+            </div>
+            <div class="timeline-content">
+                <p>In November 1995, Canada launched RADARSAT-1, a groundbreaking radar imaging satellite. It uses a powerful synthetic aperture radar (SAR) instrument, and takes high resolution images of the Earth for companies and the government.  It provides information about the environment, disaster management, interferometry, agriculture, cartography, ect. This satellite proved to be very useful for Canada and internationally, and Canada is now a world leader in the processing of satellite remote sensing data. This was a great Canadian aerospace innovation, which was also used internationally. RADARSAT-1, like Canadarm2, is a globally utilized aerospace innovation that has significantly advanced space exploration.
+                </p>
+                <figure>
+                    <img src="radarsat.jpg" alt="Event 1 Image" class="timeline-image">
+                    <figcaption>Radarsat-2’s 1 millionth image taken on September 11, 2022.
+                    </figcaption>
+                </figure>
+            </div>
+        </div>
+        <div class="timeline-item" id="sboy" onclick="toggleContent(this)">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date" id="sboy">2001</div>
+            <div class="timeline-title">Canadarm2 
+            </div>
+            <div class="timeline-content">
+                <p>The Canadarm2, launched in 2001 represents a milestone in robotics, space exploration, and international collaboration. It improves the original Canadarm in several ways. While Canadarm was attached to the space shuttle, Canadarm2 is mobile, moving end-over-end around the International Space Station (ISS). This mobility is possible thanks to the Mobile Base System, a platform that glides along rails on the station. With seven joints, Canadarm2 is more agile than a human arm and can fold compactly for storage. Chris Hadfield, the first Canadian commander of the ISS did 2 spacewalks to install the arm. It played an important role in construction of the ISS, and repairs it to this day. Canadarm2 is more than a robot arm, it is a great innovation in aerospace and a proud symbol of Canadian aerospace innovation with its versatility and technical prowess.
+                </p>
+                <figure>
+                    <img src="canadarm.png" alt="Event 1 Image" class="timeline-image">
+                    <figcaption>Canadarm2 operating on the ISS.
+                    </figcaption>
+                </figure>
+            </div>
+        </div>
+    </div>
+    <div class="conclusion">
+      <h2>Conclusion</h2>
+      <p class="smallpp">Canadarm2 is a great Canadian aerospace innovation, a proud symbol of the nation’s ingenuity. Rooted in a history of groundbreaking advancements, from the precise astronomical tools of the Dominion Observatory to the life-saving G-suit and the pioneering technologies of the original Canadarm and RADARSAT-2, Canadarm2 showcases the innovation and perseverance that define Canada’s contributions to space exploration. Its ongoing role in the maintenance and success of the ISS secures Canada’s place as a leader in the realm of aerospace innovation.
+    </p>
+    </div>
+    <div class="conclusion" id="darker">
+        <h3>Citations</h3>
+        <ul class="smallpp">
+            <li>
+              "Canadarm." <em>The Canadian Encyclopedia</em>, 27 Feb. 2020, 
+              <a href="https://www.thecanadianencyclopedia.ca/en/article/canadarm" target="_blank">
+                https://www.thecanadianencyclopedia.ca/en/article/canadarm
+              </a>. Accessed 15 Jan. 2025.
+            </li>
+            <li>
+              "Next Generation Canadarm Project." <em>Government of Canada</em>, 26 Sept. 2012, 
+              <a href="https://www.canada.ca/en/news/archive/2012/09/next-generation-canadarm-project.html" target="_blank">
+                https://www.canada.ca/en/news/archive/2012/09/next-generation-canadarm-project.html
+              </a>. Accessed 15 Jan. 2025.
+            </li>
+            <li>
+              "Canadarm2 Turns 10." <em>CBC News</em>, 30 Apr. 2021, 
+              <a href="https://www.cbc.ca/news/science/canadarm2-turns-10-1.1093132" target="_blank">
+                https://www.cbc.ca/news/science/canadarm2-turns-10-1.1093132
+              </a>. Accessed 15 Jan. 2025.
+            </li>
+            <li>
+              <em>Dominion Astrophysical Observatory National Historic Site</em>. Parks Canada, 
+              <a href="https://www.pc.gc.ca/apps/dfhd/page_fhbro_eng.aspx?id=5695" target="_blank">
+                https://www.pc.gc.ca/apps/dfhd/page_fhbro_eng.aspx?id=5695
+              </a>. Accessed 15 Jan. 2025.
+            </li>
+            <li>
+              Brooks, Derek. "The Dominion Astrophysical Observatory: A National Treasure." <em>e-Cassiopeia</em>, 2005, 
+              <a href="https://www.casca.ca/ecass/issues/2005-me/features/brooks/e-Cassi_DomObsV4.htm" target="_blank">
+                https://www.casca.ca/ecass/issues/2005-me/features/brooks/e-Cassi_DomObsV4.htm
+              </a>. Accessed 15 Jan. 2025.
+            </li>
+            <li>
+              "Celebrating Wilbur Rounding Franks, Inventor of the G-Suit." <em>Government of Canada</em>, 15 Mar. 2021, 
+              <a href="https://www.canada.ca/en/department-national-defence/maple-leaf/rcaf/2021/03/celebrating-wilbur-rounding-franks-inventor-of-the-g-suit.html" target="_blank">
+                https://www.canada.ca/en/department-national-defence/maple-leaf/rcaf/2021/03/celebrating-wilbur-rounding-franks-inventor-of-the-g-suit.html
+              </a>. Accessed 15 Jan. 2025.
+            </li>
+            <li>
+              "Canadarm: Flights and Missions." <em>Canadian Space Agency</em>, 14 Sept. 2022, 
+              <a href="https://www.asc-csa.gc.ca/eng/canadarm/flight.asp" target="_blank">
+                https://www.asc-csa.gc.ca/eng/canadarm/flight.asp
+              </a>. Accessed 15 Jan. 2025.
+            </li>
+            <li>
+              "What Is RADARSAT-2?" <em>Canadian Space Agency</em>, 
+              <a href="https://www.asc-csa.gc.ca/eng/satellites/radarsat2/what-is-radarsat2.asp" target="_blank">
+                https://www.asc-csa.gc.ca/eng/satellites/radarsat2/what-is-radarsat2.asp
+              </a>. Accessed 15 Jan. 2025.
+            </li>
+          </ul>
+    </div>
+
+    <script>
+        function toggleContent(item) {
+            const isActive = item.classList.contains('active');
+            document.querySelectorAll('.timeline-item').forEach(el => el.classList.remove('active'));
+            if (!isActive) {
+                item.classList.add('active');
+            }
+        }
+    </script>
+</body>
+</html>
